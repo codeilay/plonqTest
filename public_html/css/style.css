@@ -397,10 +397,16 @@ section {
     min-height: 100vh;
   }
   .wrapper .section-image #trigger2 {
-    top: -50vh;
+    top: -20vh;
   }
   .wrapper .section-image .overflow-wrapper {
     position: relative;
+  }
+  .wrapper .section-image .section-content .inner {
+    height: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20vh;
   }
   .wrapper .section-image .section-content .inner .el {
     position: relative;
