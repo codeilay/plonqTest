@@ -1,0 +1,38 @@
+@import mixin
+
+@include for-phone-only
+
+    section
+        padding: 25px 0
+
+    .wrapper
+        .section-content
+            max-width: 320px
+        #topNavbar
+            .section-content
+                ul
+                    display: none
+        .section-first
+            .first-lockup
+                .image-wrapper
+                    position: relative
+                    left: 0
+                    img
+                        max-width: 100%
+                        transform: scale(0.8, 0.8) !important
+                .image-first-logo
+                    padding: 20px 0
+                    img
+                        transform: scale(1, 1) !important
+            .description-wrapper
+                font-size: 20px
+                padding: 0 20px
+        .section-second
+            padding-top: 25px
+            .intro
+                .title
+                    font-size: 60px
+                    line-height: 1.1
+                .intro-description
+                    margin-left: 0
+                    margin-top: 40px

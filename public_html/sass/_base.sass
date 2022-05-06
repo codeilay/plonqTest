@@ -1,0 +1,198 @@
+@import mixin
+
+*, ::after, ::before
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+body
+    font-family: "Oswald", sans-serif
+    color: #222222
+    min-height: 200vh
+    overflow-x: hidden
+    position: relative
+
+a
+    color: #ffffff
+    text-decoration: none
+    font-size: 14px
+
+section
+    padding: 50px 0
+
+.wrapper
+    display: block
+    .section-content
+        margin-left: auto
+        margin-right: auto
+        width: 980px
+    #topNavbar
+        height: 44px
+        background: rgba(0,0,0,0.8)
+        .section-content
+            margin-left: auto
+            margin-right: auto
+            height: 100%
+            ul
+                display: flex
+                flex-wrap: nowrap
+                justify-content: center
+                align-items: center
+                height: 100%
+                li
+                    list-style: none
+                    margin: 0 50px
+                    .link
+                        color: #ffffff
+                        text-decoration: none
+                        font-size: 14px
+                        opacity: .8
+                        transition: .3s
+                        &:hover
+                            opacity: 1
+    .section-first
+        width: 100%
+        position: relative
+        min-height: 100vh
+        #trigger
+            top: 30%
+            position: absolute
+        .first-lockup
+            position: relative
+            margin-left: auto
+            margin-right: auto
+            .image-wrapper
+                position: absolute
+                z-index: 1
+                display: block
+                min-height: inherit
+                text-align: center
+                top: 0
+                left: 9%
+                img
+                    opacity: 0
+                    transition: opacity 0.6s
+                    transform: scale(0.8, 0.8)
+                    will-change: transform, opacity
+                    max-height: 100%
+            .image-first-logo
+                position: relative
+                display: flex
+                align-items: center
+                justify-content: center
+                text-align: center
+                width: 100%
+                z-index: -1
+                letter-spacing: 0.05em
+                font-size: 220px
+                min-height: inherit
+                padding: 200px 0
+                img
+                    max-width: 90%
+                    height: auto !important
+                    opacity: 0
+                    transition: opacity 1s 0.5s
+            &.show
+                .image-wrapper
+                    img
+                        opacity: 1
+                .image-first-logo
+                    img
+                        opacity: 1
+        .description-wrapper
+            text-align: center
+            font-size: 32px
+    .section-second
+        position: relative
+        padding-top: 180px
+        background-color: #222222
+        #trigger3
+            position: absolute
+            top: 0
+        .intro
+            margin-left: auto
+            margin-right: auto
+            .future
+                font-size: 24px
+            .title
+                margin-top: 10px
+                font-size: 150px
+                line-height: .83393
+                span
+                    display: block
+            .intro-description
+                margin-top: 80px
+                font-size: 28px
+                line-height: 1.25
+                letter-spacing: .002em
+                margin-left: 50%
+    .section-image
+        position: relative
+        min-height: 300vh
+        padding: 0
+        border-top: 1px dashed #f1f1f1
+        #trigger2
+            top: 50vh
+            position: absolute
+        .overflow-wrapper
+            text-align: center
+            height: 100%
+            position: absolute
+            top: 0
+            width: 100%
+            .images
+                position: sticky
+                top: 0
+                height: 100vh
+                img
+                    width: auto
+                    max-height: 100vh
+        .section-content
+            margin-left: auto
+            margin-right: auto
+            height: 100%
+            min-height: inherit
+            position: relative
+            z-index: 2
+            .inner
+                position: sticky
+                top: 0
+                height: 100vh
+                .el
+                    position: absolute
+                    font-size: 20px
+                    color: #666666
+                    opacity: 0
+                    strong
+                        color: #222222
+                    &.el-1
+                        left: 61px
+                        width: 275px
+                        top: 19%
+                    &.el-2
+                        left: 61px
+                        width: 275px
+                        top: 59%
+                    &.el-3
+                        left: 50%
+                        bottom: 21%
+                        width: 275px
+                        margin-left: 150px
+            #trigger4
+                top: 1100px
+                position: absolute
+            #trigger5
+                top: 1300px
+                position: absolute
+            #trigger6
+                top: 1350px
+                position: absolute
+
+@include for-screen-only
+    .wrapper
+        .section-content
+            width: 1228px
+        .section-first
+            .first-lockup
+                .image-wrapper
+                    left: 14%

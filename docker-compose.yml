@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  web:
+    image: nginx
+    volumes:
+      - ./:/var/www
+      - ./_docker/nginx/conf.d:/etc/nginx/conf.d/
+    ports:
+      - "8876:80"
+    depends_on:
+      - app
+    container_name: plonq_nginx
+
+  app:
+    build:
+      context: .
+      dockerfile: _docker/app/Dockerfile
+    volumes:
+      - ./:/var/www
+    # depends_on:
+    #   - db
+    container_name: plonq_app
+  # db:
+  #   image: mysql
+  #   restart: always
+  #   volumes:
+  #     - ./tmp/db:/var/lib/mysql
+  #   environment:
+  #     MYSQL_DATABASE: laradocker
+  #     MYSQL_ROOT_PASSWORD: root
+  #   ports:
+  #     - 8101:3306
+  #   command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+  #   container_name: project_db
+
+  # phpmyadmin:
+  #   image: phpmyadmin
+  #   restart: always
+  #   environment:
+  #     PMA_ARBITRARY: 1
+  #     PMA_HOST: $DB_HOST
+  #     PMA_USER: $DB_USERNAME
+  #     PMA_PASSWORD: $DB_PASSWORD
+  #   ports:
+  #     - 8875:80
+  #   container_name: project_phpmyadmin
