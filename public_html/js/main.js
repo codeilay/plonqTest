@@ -1,7 +1,13 @@
-window.onload = function() {
-    var el = document.getElementById("first-lockup");
-    el.classList.add("show");
- };
+var img = new Image();
+img.onload = function () {
+    var img = new Image();
+    img.onload = function () {
+        var el = document.getElementById("first-lockup");
+        el.classList.add("show");
+    }
+    img.src = "images/Plonq.png";
+}
+img.src = "images/l.png";
 
 // init controller
 var controller = new ScrollMagic.Controller();
