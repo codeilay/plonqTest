@@ -20,10 +20,32 @@ var scene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 600})
 .addTo(controller);
 
 
-var images = [];
+var images = new Array();
 for (i = 1; i < 119; i++) {
     images.push("images/plonqImg/" + i + ".png");
 }
+
+//preloader
+var preloaded = 0;
+ 
+function preLoader(e) {
+    for (var i = 0; i < images.length; i++) {
+        var tempImage = new Image();
+         
+        tempImage.addEventListener("load", progress, true);
+        tempImage.src = images[i];
+    }
+}
+ 
+function progress() {
+    preloaded++;
+     
+    if (preloaded == images.length) {
+        //ALL Images have been loaded, perform the desired action
+    }
+}
+this.addEventListener("DOMContentLoaded", preLoader, true);
+//endPreloader
 
 var obj = {curImg: 0};
 
